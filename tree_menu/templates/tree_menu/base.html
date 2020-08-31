@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'tree_menu/jslists-master/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <link rel="stylesheet" href="{% static 'tree_menu/jslists-master/jsLists.css' %}">
+    <link rel="stylesheet" href="{% static 'tree_menu/bootstrap.min.css' %}">
+    <script src="{% static 'tree_menu/bootstrap.bundle.min.js' %}"></script>
+    <title>Example tree-menu</title>
+
+</head>
+<body>
+
+
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'tree_menu/jslists-master/jsLists.js' %}"></script>
+</body>
+</html>

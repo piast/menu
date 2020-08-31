@@ -1,0 +1,72 @@
+{% extends 'tree_menu/base.html' %}
+
+{% load menu_tag %}
+
+{% block content %}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Древовидное меню </h1>
+
+
+    <div class="row">
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Side Widget -->
+        <div class="card my-4">
+              {% draw_menu 'main_menu' %}
+        </div>
+
+        <div class="card my-4">
+               {% draw_menu 'additional_menu' %}
+        </div>
+
+      </div>
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><b>Задача :  </b></p>
+
+        <hr>
+
+        <!-- Post Content -->
+        <p>Нужно сделать django app, который будет реализовывать древовидное меню, соблюдая следующие условия:</p>
+        <ul>
+          <li>1) Меню реализовано через template tag</li>
+          <li>2) Все, что над выделенным пунктом - развернуто. Первый уровень вложенности под выделенным пунктом тоже развернут.</li>
+          <li>3) Хранится в БД.</li>
+          <li>4) Редактируется в стандартной админке Django</li>
+          <li>5) Активный пункт меню определяется исходя из URL текущей страницы</li>
+          <li>6) Меню на одной странице может быть несколько. Они определяются по названию.</li>
+          <li>7) При клике на меню происходит переход по заданному в нем URL. URL может быть задан как явным образом, так и через named url.</li>
+          <li>8) На отрисовку каждого меню требуется ровно 1 запрос к БД</li>
+        </ul>
+
+        <p>Нужен django-app, который позволяет вносить в БД меню (одно или несколько) через админку, и нарисовать на любой нужной странице меню по названию.</p>
+        <p>При выполнении задания из библиотек следует использовать только Django и стандартную библиотеку Python.</p>
+        <p><a href="https://github.com/piast/menu">https://github.com/piast/menu</a></p>
+
+        <hr>
+
+
+
+      </div>
+
+
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+
+{% endblock %}

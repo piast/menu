@@ -1,0 +1,17 @@
+{% load item_tag %}
+
+
+<li class="{%if item.is_opend %}my-opened{% endif %}">
+    {%if not item.childs %}
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        <a href="{{ item.url }}" style="{%if item.is_active %}color:red;{% endif %}">{{ item.title }}</a>
+    {% else %}
+        <i class="fa fa-folder-o" aria-hidden="true"></i>
+        <b><a href="{{ item.url }}" style="{%if item.is_active %}color:red;{% endif %}">{{ item.title }}</a></b>
+        <ul>
+            {% for ch in item.childs %}
+                {% draw_item ch %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
